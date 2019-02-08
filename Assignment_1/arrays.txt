@@ -1,0 +1,10 @@
+arrays
+title
+title.forEach(function(t){
+console.log(t);
+}}
+var titleArr= Array.from(title);
+titleArr
+var titleArr.forEach(function(t)){
+console.log(t);
+}
