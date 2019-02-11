@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet" type='text/css'>
+<style>
+div{
+	margin: 0 auto;
+	text-align: center;
+	background: rgba(11,156,49,.6);
+	height: 450px;
+	width: 350px;
+	font-family: 'Baloo Thambi', cursive;
+	border-radius: 40px;
+}
+body{
+background:url("g_back.png");
+}
+h1{
+	position: relative;
+	top: 20px;
+	font-size: 50px;
+	color:red;
+}
+input{
+	float: right;
+	position: relative;
+	left:-30px;
+	top:13px;
+	height:20px;
+}
+#btn{
+	height:40px;
+	width:130px;
+	position: relative;
+	border-radius: 9px;
+	box-shadow: 0px 5px 10px -1px ;
+	left:-100px;
+	color:blue;
+}
+h2{
+	color:white;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+<div>
+<h1>Form Validation</h1>
+<form>
+<h2>Name :
+<input type="text" placeholder="name" id="a"><br>
+Email :
+<input type="email" placeholder="email" id="b"><br>
+Mobile :
+<input type="number" placeholder="number" id="c"></h2>
+<!-- <input type="reset" name="reset" class="btn"> -->
+<input type="submit" value="Submit" name="submit" id="btn" action="#" onclick="valid()">
+</form>
+</div>
+<script>
+function valid(){
+var a1=document.getElementById("a").value;
+var a2=document.getElementById("b").value;
+var a3=document.getElementById("c").value;
+var val=0;
+	if(a1=="")
+	{
+		alert("please fill your name!");
+		val++;
+	}
+	else if(a1.length<=2)
+	{
+		alert("invalid name!");
+		val++;
+	}
+	else if(a2.indexOf('@')<=0)
+	{
+		alert("invalid email missing @ !");
+		val++;
+	}
+	else if(a2.lastIndexOf('.')<(a2.indexOf('@')+4))
+	{
+		alert("invalid email missing . !");
+		val++;
+	}
+	else if((a2.charAt(a2.length-4)!='.')&&(a2.charAt(a2.length-3)!='.'))
+	{
+		alert("invalid email missing . !");
+		val++;
+	}
+	else if(a3.length<=9)
+	{
+		alert("invalid mobile number!");
+		val++;
+	}
+	if(val==0)
+		alert("Thank You! Your response has been submitted!");
+}
+</script>
+</body>
+</html>
