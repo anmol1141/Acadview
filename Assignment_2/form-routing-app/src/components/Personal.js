@@ -40,6 +40,6 @@ class Personal extends Component {
         <p>About: {this.state.showabout}</p>
       </div>
     );
-  }
+  }  
 }
 export default Personal;
